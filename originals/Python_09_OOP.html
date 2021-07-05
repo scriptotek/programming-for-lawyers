@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Klasser og Arv &#8212; Introduction to Programming</title>
+    
+  <link href="../_static/css/theme.css" rel="stylesheet" />
+  <link href="../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/togglebutton.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../index.html">
+      
+      <img src="../_static/uio_logo_small.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../01_basics.html">
+   The Basics: Variables and Printing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../02_lists_loops.html">
+   Lists and Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../03_Dictionaries.html">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_library_catalogue.html">
+   JSON and Library Catalog Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../04_caselaw.html">
+   JSON and Case Law
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../05_if.html">
+   Decisions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../06_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../07_Strings.html">
+   Bonus Episode: Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../machine_learning.html">
+   A short introduction to machine learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../08_exercises.html">
+   More Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../09_library_data_exercises.html">
+   Library Data Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../10_case_law_exercises.html">
+   Case Law Exercises
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/originals/Python_09_OOP.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/scriptotek/programming-for-lawyers"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/scriptotek/programming-for-lawyers/issues/new?title=Issue%20on%20page%20%2Foriginals/Python_09_OOP.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/scriptotek/programming-for-lawyers/edit/master/originals/Python_09_OOP.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/scriptotek/programming-for-lawyers/master?urlpath=tree/originals/Python_09_OOP.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://jupyterhub.uio.no/hub/user-redirect/git-pull?repo=https://github.com/scriptotek/programming-for-lawyers&urlpath=tree/programming-for-lawyers/originals/Python_09_OOP.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="../_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/scriptotek/programming-for-lawyers/blob/master/originals/Python_09_OOP.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="../_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#arv">
+   Arv
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#overskriving">
+   Overskriving
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#funksjonen-isinstance">
+     Funksjonen
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       isinstance()
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="klasser-og-arv">
+<h1>Klasser og Arv<a class="headerlink" href="#klasser-og-arv" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="arv">
+<h2>Arv<a class="headerlink" href="#arv" title="Permalink to this headline">¶</a></h2>
+<p>Klasser i Python kan <em>arve</em> fra andre klasser. En klasse som arver, kalles ofte for en <em>child class</em>, mens klassen den arver av, kalles ofte dens <em>parent class</em>.</p>
+<p>En <em>child class</em> vil automatisk arve alt fra sin <em>parent class</em>, men den kan overskrive metoder for å endre på egenskaper fra <em>parent class</em> til å passe bedre med <em>child class</em>. Den vil også typisk ha flere metoder enn sin <em>parent class</em>.</p>
+<p>Vi kan begynne med å se på et generisk tilfelle. Under ligger <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Parent</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Parent</span><span class="p">:</span>  
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">parent_variable</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parent_variable</span> <span class="o">=</span> <span class="n">parent_variable</span>
+        
+    <span class="k">def</span> <span class="nf">parent_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is a method in class Parent&quot;</span><span class="p">)</span>       
+</pre></div>
+</div>
+</div>
+</div>
+<p>Under ligger <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Child</span></code>, som arver fra <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Parent</span></code>. Dette er spesifisert ved å legge ved <code class="docutils literal notranslate"><span class="pre">Parent</span></code> som argument til klassen, som vist under.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Child</span><span class="p">(</span><span class="n">Parent</span><span class="p">):</span>   
+    <span class="k">def</span> <span class="nf">child_method</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This is a method in class Child&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Under opprettes en instans av hver av klassene. Merk at <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Child</span></code> har arvet konstruktøren til <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Parent</span></code>, og krever derfor et argument.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parent</span> <span class="o">=</span> <span class="n">Parent</span><span class="p">(</span><span class="mi">42</span><span class="p">)</span>
+<span class="n">child</span> <span class="o">=</span> <span class="n">Child</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>For å tydeliggjøre at <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Child</span></code> har arvet konstruktøren til <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Parent</span></code>, viser eksempelet under hvordan du får feilmelding på grunn av for få argument hvis ingen argument sendes inn i konstruktøren.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">other_child</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">/</span><span class="n">tmp</span><span class="o">/</span><span class="n">ipykernel_2649</span><span class="o">/</span><span class="mf">1928296141.</span><span class="n">py</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">other_child</span> <span class="o">=</span> <span class="n">Child</span><span class="p">()</span>
+
+<span class="ne">TypeError</span>: __init__() missing 1 required positional argument: &#39;parent_variable&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>La oss se igjen på instansen av <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Parent</span></code>. Den skal ha én variabel, og den skal ha én methode.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variable of instance of class Parent: &quot;</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">parent_variable</span><span class="p">)</span>
+<span class="n">parent</span><span class="o">.</span><span class="n">parent_method</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable of instance of class Parent:  42
+This is a method in class Parent
+</pre></div>
+</div>
+</div>
+</div>
+<p>Merk at <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Child</span></code> har akkurat de samme egenskapene (selvfølgelig med annen verdi på variabelen):</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Variable of instance of class Parent: &quot;</span><span class="p">,</span> <span class="n">child</span><span class="o">.</span><span class="n">parent_variable</span><span class="p">)</span>
+<span class="n">child</span><span class="o">.</span><span class="n">parent_method</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Variable of instance of class Parent:  3.14
+This is a method in class Parent
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Child</span></code> har også en ny methode:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">child</span><span class="o">.</span><span class="n">child_method</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This is a method in class Child
+</pre></div>
+</div>
+</div>
+</div>
+<p>Merk hvordan arv <strong>ikke</strong> går begge veier. Det er kun <em>child class</em> som arver av sin <em>parent class</em>, ikke omvendt!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">parent</span><span class="o">.</span><span class="n">child_method</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
+<span class="nn">&lt;ipython-input-8-4a95fa2509b1&gt;</span> in <span class="ni">&lt;module&gt;</span><span class="nt">()</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">parent</span><span class="o">.</span><span class="n">child_method</span><span class="p">()</span>
+
+<span class="ne">AttributeError</span>: &#39;Parent&#39; object has no attribute &#39;child_method&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="overskriving">
+<h2>Overskriving<a class="headerlink" href="#overskriving" title="Permalink to this headline">¶</a></h2>
+<p>Som tidligere nevnt kan metoder også overskrives. Dette gjøres enkelt ved å definere en metode i <em>child class</em> med samme navn som en metode i <em>parent class</em>.</p>
+<p>Noe som er vanlig er å overskrive en metode, men samtidig arve fra <em>parent class</em>.</p>
+<p>Dette vil bli illustrert gjennom <em>parent class</em> <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Circle</span></code> og dens <em>child class</em> <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Sphere</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">numpy</span> <span class="kn">import</span> <span class="n">pi</span>
+
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>    
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x0</span> <span class="o">=</span> <span class="n">x0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y0</span> <span class="o">=</span> <span class="n">y0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">R</span> <span class="o">=</span> <span class="n">R</span>
+        
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">pi</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="o">**</span><span class="mi">2</span>
+    
+    <span class="k">def</span> <span class="nf">print_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The area of the circle is </span><span class="si">%.4f</span><span class="s2">&quot;</span> <span class="o">%</span><span class="k">self</span>.area())
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Circle with raidus </span><span class="si">%.3g</span><span class="s2"> and center at (</span><span class="si">%.1f</span><span class="s2">, </span><span class="si">%.1f</span><span class="s2">)&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Et annet ord for <em>parent class</em> er <em>super class</em>. I Python code brukes <code class="docutils literal notranslate"><span class="pre">super</span></code> for å betegne klassen som arves fra.</p>
+<p>For å definere en sfære, trengs samme parametere som for en sirkel, men i tillegg trengs en koordinat i <span class="math notranslate nohighlight">\(z\)</span>-retning. I <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Sphere</span></code> lagres derfor <span class="math notranslate nohighlight">\(z_0\)</span> i konstruktøren i klassen <code class="docutils literal notranslate"><span class="pre">Sphere</span></code>, mens for å lagre resten av variablene kan <em>parent class</em> <code class="docutils literal notranslate"><span class="pre">Circle</span></code> sin konstruktør gjenbrukes. Dette gjøres ved å kalle på <code class="docutils literal notranslate"><span class="pre">super</span></code> for å få <em>parent class</em>, og spesifisere at det er konstruktøren som skal kalles på. Argumentene sendes da videre til <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Circle</span></code> sin konstruktør og lagres der.</p>
+<p>Tilsvarende er metoden <code class="docutils literal notranslate"><span class="pre">area()</span></code> overskrevet. Ettersom en sphære sitt areal er fire ganger arealet til en sirkel, kalles <code class="docutils literal notranslate"><span class="pre">area()</span></code> metoden til <em>parent class</em>.</p>
+<p>Metoden <code class="docutils literal notranslate"><span class="pre">volume()</span></code> ligger naturligvis ikke i <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Circle</span></code>. Metoden i <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Sphere</span></code> overskriver dermed ingenting, det er en metode kun <code class="docutils literal notranslate"><span class="pre">Sphere</span></code> har.</p>
+<p>Special method <code class="docutils literal notranslate"><span class="pre">__str__()</span></code> bruker ikke arv, men overskirves i <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">Sphere</span></code>. Merk at funksjonen i <code class="docutils literal notranslate"><span class="pre">Sphere</span></code> har tilgang til alle variablene som ble lagret i <em>parent class</em> <code class="docutils literal notranslate"><span class="pre">Cricle</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Sphere</span><span class="p">(</span><span class="n">Circle</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">z0</span><span class="p">,</span> <span class="n">R</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">z0</span> <span class="o">=</span> <span class="n">z0</span>
+        <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="n">x0</span><span class="p">,</span> <span class="n">y0</span><span class="p">,</span> <span class="n">R</span><span class="p">)</span>      <span class="c1"># call the constructor of super class </span>
+        
+    <span class="k">def</span> <span class="nf">area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">4</span><span class="o">*</span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">area</span><span class="p">()</span>
+    
+    <span class="k">def</span> <span class="nf">volmue</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="mi">4</span><span class="o">/</span><span class="mi">3</span><span class="o">*</span><span class="n">pi</span><span class="o">*</span><span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="o">**</span><span class="mi">3</span>
+    
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Sphere with raidus </span><span class="si">%.3g</span><span class="s2"> and center at (</span><span class="si">%.1f</span><span class="s2">, </span><span class="si">%.1f</span><span class="s2">, </span><span class="si">%.1f</span><span class="s2">)&quot;</span> <span class="o">%</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">R</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">x0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y0</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">z0</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="funksjonen-isinstance">
+<h3>Funksjonen <code class="docutils literal notranslate"><span class="pre">isinstance()</span></code><a class="headerlink" href="#funksjonen-isinstance" title="Permalink to this headline">¶</a></h3>
+<p>Funksjonen <code class="docutils literal notranslate"><span class="pre">isinstance(instance,</span> <span class="pre">class)</span></code> returnerer boolske utrykk <code class="docutils literal notranslate"><span class="pre">True</span></code> eller <code class="docutils literal notranslate"><span class="pre">False</span></code> på om <code class="docutils literal notranslate"><span class="pre">instance</span></code> er en instans av klassen <code class="docutils literal notranslate"><span class="pre">class</span></code> eller ikke.</p>
+<p>Vi kan begynne med å spørre <code class="docutils literal notranslate"><span class="pre">isinstance</span></code> noe som opplagt er sant:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;child  is of class  Child: &quot;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Child</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;parent is of class Parent: &quot;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">Parent</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>child  is of class  Child:  True
+parent is of class Parent:  True
+</pre></div>
+</div>
+</div>
+</div>
+<p>Så noe som opplagt ikke er sant:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;child  is of class Circle: &quot;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Circle</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;parent is of class Circle: &quot;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Circle</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>child  is of class Circle:  False
+parent is of class Circle:  False
+</pre></div>
+</div>
+</div>
+</div>
+<p>Men merk hva som skjer når klassen arver:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;child  is of class Parent: &quot;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">child</span><span class="p">,</span> <span class="n">Parent</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;parent is of class  Child: &quot;</span><span class="p">,</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">parent</span><span class="p">,</span> <span class="n">Child</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>child  is of class Parent:  True
+parent is of class  Child:  False
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./originals"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By University of Oslo, Erik Winge, Eirill Strand Hauge<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,722 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bonus Episode: Strings &#8212; Introduction to Programming</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.acff12b8f9c144ce68a297486a2fa670.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="A short introduction to machine learning" href="machine_learning.html" />
+    <link rel="prev" title="Functions" href="06_functions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/uio_logo_small.svg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Introduction to Programming</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01_basics.html">
+   The Basics: Variables and Printing
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="02_lists_loops.html">
+   Lists and Loops
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="03_Dictionaries.html">
+   Dictionaries
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_library_catalogue.html">
+   JSON and Library Catalog Data
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="04_caselaw.html">
+   JSON and Case Law
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="05_if.html">
+   Decisions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="06_functions.html">
+   Functions
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Bonus Episode: Strings
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="machine_learning.html">
+   A short introduction to machine learning
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="08_exercises.html">
+   More Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09_library_data_exercises.html">
+   Library Data Exercises
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10_case_law_exercises.html">
+   Case Law Exercises
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/07_Strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/scriptotek/programming-for-lawyers"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/scriptotek/programming-for-lawyers/issues/new?title=Issue%20on%20page%20%2F07_Strings.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        <a class="edit-button" href="https://github.com/scriptotek/programming-for-lawyers/edit/master/07_Strings.ipynb"><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Edit this page"><i class="fas fa-pencil-alt"></i>suggest edit</button></a>
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/scriptotek/programming-for-lawyers/master?urlpath=tree/07_Strings.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        <a class="jupyterhub-button" href="https://jupyterhub.uio.no/hub/user-redirect/git-pull?repo=https://github.com/scriptotek/programming-for-lawyers&urlpath=tree/programming-for-lawyers/07_Strings.ipynb&branch=master"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch JupyterHub" data-toggle="tooltip"
+                data-placement="left"><img class="jupyterhub-button-logo"
+                    src="_static/images/logo_jupyterhub.svg"
+                    alt="Interact on JupyterHub">JupyterHub</button></a>
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/scriptotek/programming-for-lawyers/blob/master/07_Strings.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-search">
+   String Search
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#span-style-color-green-exercise-string-search-span">
+     <span style="color:green">
+      Exercise: String Search
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-split">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     string.split()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#joining-strings">
+   Joining Strings
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#span-style-color-green-exercise-inverting-names-span">
+     <span style="color:green">
+      Exercise: Inverting Names
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#indexing-strings">
+   Indexing Strings
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#string-replace">
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     string.replace()
+    </span>
+   </code>
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sorting">
+   Sorting
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#span-style-color-green-exercise-sorting-numbers-span">
+     <span style="color:green">
+      Exercise: Sorting Numbers
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#span-style-color-green-case-law-exercise-attorneys-sorted-span">
+     <span style="color:green">
+      Case Law Exercise: Attorneys Sorted
+     </span>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#span-style-color-green-library-data-exercise-creators-sorted-span">
+     <span style="color:green">
+      Library Data Exercise: Creators Sorted
+     </span>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#span-style-color-blue-key-points-span">
+   <span style="color:blue">
+    Key Points
+   </span>
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="bonus-episode-strings">
+<h1>Bonus Episode: Strings<a class="headerlink" href="#bonus-episode-strings" title="Permalink to this headline">¶</a></h1>
+<p>This notebook is based on materials kindly provided by the <a class="reference external" href="https://www.uio.no/studier/emner/matnat/ifi/IN1900/h19/">IN1900</a> team.</p>
+<p>Python has many functions for working with strings. We will look at a few of them.</p>
+<div class="section" id="string-search">
+<h2>String Search<a class="headerlink" href="#string-search" title="Permalink to this headline">¶</a></h2>
+<p>We can search for a substring in a string:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">text</span> <span class="o">=</span> <span class="s2">&quot;a short text&quot;</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;short&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;an&quot;</span> <span class="ow">in</span> <span class="n">text</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="span-style-color-green-exercise-string-search-span">
+<h3><span style="color:green"> Exercise: String Search </span><a class="headerlink" href="#span-style-color-green-exercise-string-search-span" title="Permalink to this headline">¶</a></h3>
+<p>Examine the code below. What results do you expect?</p>
+<p>Now, run the code. Does the result match your expectation?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="o">=</span> <span class="s2">&quot;Strange women lying in ponds, distributing swords, is no basis for a system of government!&quot;</span>
+<span class="n">queries</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;women&quot;</span><span class="p">,</span> <span class="s2">&quot;men&quot;</span><span class="p">,</span> <span class="s2">&quot;Camelot&quot;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">queries</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">query</span> <span class="ow">in</span> <span class="n">quote</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="s2">&quot;was found in quote&quot;</span><span class="p">)</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="n">query</span><span class="p">,</span> <span class="s2">&quot;was not found in quote&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>women was found in quote
+men was found in quote
+Camelot was not found in quote
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string-split">
+<h2><code class="docutils literal notranslate"><span class="pre">string.split()</span></code><a class="headerlink" href="#string-split" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">split()</span></code> divides/splits a string into a list of parts. If we don’t specify an argument, it splits on <em>whitespace</em>, which includes spaces and ‘tab’-characters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quote_list</span> <span class="o">=</span> <span class="n">quote</span><span class="o">.</span><span class="n">split</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quote_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Strange&#39;, &#39;women&#39;, &#39;lying&#39;, &#39;in&#39;, &#39;ponds,&#39;, &#39;distributing&#39;, &#39;swords,&#39;, &#39;is&#39;, &#39;no&#39;, &#39;basis&#39;, &#39;for&#39;, &#39;a&#39;, &#39;system&#39;, &#39;of&#39;, &#39;government!&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>You can also specify one or more characters to use as the separator:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quote_list</span> <span class="o">=</span> <span class="n">quote</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s2">&quot;,&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quote_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Strange women lying in ponds&#39;, &#39; distributing swords&#39;, &#39; is no basis for a system of government!&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="joining-strings">
+<h2>Joining Strings<a class="headerlink" href="#joining-strings" title="Permalink to this headline">¶</a></h2>
+<p>We can also go the other way, joining a list of strings to a single string.
+The syntax is different, we must first specify the string that is used to “glue” the parts together.
+This is the opposite of the separator above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">joined_list</span> <span class="o">=</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">quote_list</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">joined_list</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Strange women lying in ponds, distributing swords, is no basis for a system of government!
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="span-style-color-green-exercise-inverting-names-span">
+<h3><span style="color:green"> Exercise: Inverting Names </span><a class="headerlink" href="#span-style-color-green-exercise-inverting-names-span" title="Permalink to this headline">¶</a></h3>
+<p>Complete the function below which inverts names.
+“John Doe” should become “Doe, John”.</p>
+<p>To reverse a list, you can use the function <code class="docutils literal notranslate"><span class="pre">reversed()</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">invert_name</span><span class="p">(</span><span class="n">name</span><span class="p">):</span>
+    <span class="s1">&#39;your code here&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">invert_name</span><span class="p">(</span><span class="s2">&quot;John Doe&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>None
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="indexing-strings">
+<h2>Indexing Strings<a class="headerlink" href="#indexing-strings" title="Permalink to this headline">¶</a></h2>
+<p>You can use indexes with Strings, just like with lists. This yields <em>characters</em>, not words:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;First character in quote is&quot;</span><span class="p">,</span> <span class="n">quote</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Last character in quote is&quot;</span><span class="p">,</span> <span class="n">quote</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>First character in quote is S
+Last character in quote is !
+</pre></div>
+</div>
+</div>
+</div>
+<p>Remeber that <code class="docutils literal notranslate"><span class="pre">quote</span> <span class="pre">=</span> <span class="pre">&quot;Strange</span> <span class="pre">women</span> <span class="pre">lying</span> <span class="pre">in</span> <span class="pre">ponds,</span> <span class="pre">distributing</span> <span class="pre">swords,</span> <span class="pre">is</span> <span class="pre">no</span> <span class="pre">basis</span> <span class="pre">for</span> <span class="pre">a</span> <span class="pre">system</span> <span class="pre">of</span> <span class="pre">government!&quot;</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sub_string</span> <span class="o">=</span> <span class="n">quote</span><span class="p">[</span><span class="mi">57</span><span class="p">:</span><span class="mi">63</span><span class="p">]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">sub_string</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>basis 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="string-replace">
+<h2><code class="docutils literal notranslate"><span class="pre">string.replace()</span></code><a class="headerlink" href="#string-replace" title="Permalink to this headline">¶</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">string.replace(old,</span> <span class="pre">new)</span></code> takes two arguments. The first argument, <code class="docutils literal notranslate"><span class="pre">old</span></code>,  is the string to be replaced, and <code class="docutils literal notranslate"><span class="pre">new</span></code> is the replacement.</p>
+<p>This is often useful when changing from norwegian notation for decimal numbers to english notation for decimal numbers, as shown below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="s2">&quot;1,57&quot;</span>
+<span class="n">number</span> <span class="o">=</span> <span class="n">number</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">,</span> <span class="s1">&#39;.&#39;</span><span class="p">)</span>   <span class="c1"># number is now string object &quot;1.57&quot;</span>
+<span class="n">number</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>              <span class="c1"># number is now float 1.57</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
+</pre></div>
+</div>
+</div>
+</div>
+<p>But can also be used to replace larger pieces of text:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">quote</span> <span class="o">=</span> <span class="s2">&quot;All work and no play makes Jack a dull boy&quot;</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s2">&quot;play&quot;</span><span class="p">,</span> <span class="s2">&quot;python-programming&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">quote</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>All work and no python-programming makes Jack a dull boy
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="sorting">
+<h2>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">¶</a></h2>
+<p>We can sort lists. This can be done in two ways.
+Firstly, we can make a new, sorted list, while also keeping the old one.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Charlie&quot;</span><span class="p">,</span> <span class="s2">&quot;Alice&quot;</span><span class="p">,</span> <span class="s2">&quot;Bob&quot;</span><span class="p">]</span>
+<span class="n">names_sorted</span> <span class="o">=</span> <span class="nb">sorted</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names_sorted</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Secondly, if we don’t need the original list, it’s more efficient to sort the existing list in place:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+<span class="n">names</span><span class="o">.</span><span class="n">sort</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Charlie&#39;, &#39;Alice&#39;, &#39;Bob&#39;]
+[&#39;Alice&#39;, &#39;Bob&#39;, &#39;Charlie&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can reverse the sort order:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">names</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">names</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;Charlie&#39;, &#39;Bob&#39;, &#39;Alice&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="span-style-color-green-exercise-sorting-numbers-span">
+<h3><span style="color:green"> Exercise: Sorting Numbers </span><a class="headerlink" href="#span-style-color-green-exercise-sorting-numbers-span" title="Permalink to this headline">¶</a></h3>
+<p>We can also sort lists of numbers. Sort the list below, and print the result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">3</span><span class="p">,</span><span class="mi">15</span><span class="p">,</span><span class="mi">1</span><span class="p">,</span><span class="mi">35</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
+<span class="c1">#Your solution</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="span-style-color-green-case-law-exercise-attorneys-sorted-span">
+<h3><span style="color:green">Case Law Exercise: Attorneys Sorted </span><a class="headerlink" href="#span-style-color-green-case-law-exercise-attorneys-sorted-span" title="Permalink to this headline">¶</a></h3>
+<p>Here, we expand on the exercise “Attorneys and Head Matter” from the chapter “JSON and Case Law”, so you might want to have a look at your solution to that.
+Complete the code below to print the attorneys for each case in alphabetical order.</p>
+<p>(The simplest solution uses the names as they occur in the data, starting with first names.
+It would be nice to invert the names, but since the <code class="docutils literal notranslate"><span class="pre">attorneys</span></code> field also contains company names, this is too tricky for this exercise.)</p>
+<p>If you’re starting from scratch, you will need to browse the <a class="reference external" href="https://api.case.law/v1/cases/?jurisdiction=ill&amp;full_case=true&amp;decision_date_min=2011-01-01&amp;page_size=1%22">data</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="s2">&quot;https://api.case.law/v1/cases/?jurisdiction=ill&amp;full_case=true&amp;decision_date_min=2011-01-01&amp;page_size=3&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+
+<span class="c1">#Your solution</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="span-style-color-green-library-data-exercise-creators-sorted-span">
+<h3><span style="color:green">Library Data Exercise: Creators Sorted </span><a class="headerlink" href="#span-style-color-green-library-data-exercise-creators-sorted-span" title="Permalink to this headline">¶</a></h3>
+<p>Here, we expand on the exercise “Creators” from the chapter “JSON for librarians”, so you might want to have a look at your solution to that.
+Complete the code below to print the creators for each case in alphabetical order.</p>
+<p>If you’re starting from scratch, you will need to browse the
+<a class="reference external" href="https://api.nb.no/catalog/v1/items?digitalAccessibleOnly=true&amp;size=3&amp;filter=mediatype:b%C3%B8ker&amp;q=Bing,Jon">data</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">import</span> <span class="nn">json</span>
+
+<span class="n">URL</span> <span class="o">=</span> <span class="s2">&quot;https://api.nb.no/catalog/v1/items?digitalAccessibleOnly=true&amp;size=3&amp;filter=mediatype:bøker&amp;q=Bing,Jon&quot;</span>
+<span class="n">data</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">URL</span><span class="p">)</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">embedded</span> <span class="o">=</span> <span class="n">data</span><span class="p">[</span><span class="s1">&#39;_embedded&#39;</span><span class="p">]</span>
+<span class="n">items</span> <span class="o">=</span> <span class="n">embedded</span><span class="p">[</span><span class="s1">&#39;items&#39;</span><span class="p">]</span>
+
+<span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">items</span><span class="p">:</span>
+    <span class="n">metadata</span> <span class="o">=</span> <span class="n">item</span><span class="p">[</span><span class="s1">&#39;metadata&#39;</span><span class="p">]</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Item title:&quot;</span><span class="p">,</span> <span class="n">metadata</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">])</span>
+    <span class="c1">#your code here</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Item title: Sigurd Ranessøns proces
+Item title: Fortegnelse over magistratpersoner i Trondhjem 1377-1922 : med biografiske oplysninger og henvisninger
+Item title: Forskning for et sikrere samfunn
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="span-style-color-blue-key-points-span">
+<h2><span style="color:blue">Key Points</span><a class="headerlink" href="#span-style-color-blue-key-points-span" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Strings can be split into lists of words</p></li>
+<li><p>We can use indexes to access individual characters in a String</p></li>
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">string.replace()</span></code> to replace parts of a string</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="06_functions.html" title="previous page">Functions</a>
+    <a class='right-next' id="next-link" href="machine_learning.html" title="next page">A short introduction to machine learning</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By University of Oslo, Erik Winge, Eirill Strand Hauge<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
